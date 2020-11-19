@@ -19,13 +19,13 @@ class Gleichungssystem:
             print(line)
 
     def multipliziere(self, line_i, factor):
-        if factor!=1:
-            print("M",line_i,"(",factor,")")
+        if factor != 1:
+            print("M", line_i, "(", factor, ")")
         for spalte in range(0, self.spalten):
             self.matrix[line_i][spalte] *= factor
 
     def addiere(self, line_i, line_j, factor=1):
-        print("S",line_i,",",line_j,"(",factor,")")
+        print("S", line_i, ",", line_j, "(", factor, ")")
         for spalte in range(0, self.spalten):
             self.matrix[line_i][spalte] += self.matrix[line_j][spalte] * factor
 
@@ -53,7 +53,7 @@ class Gleichungssystem:
             self.addiere(line_i, pivot_line, -erstes_element_line_i / pivot)
 
     def finde_groessten_pivot(self, line_start, spalte_j):
-        if self.matrix[line_start][spalte_j]==0:
+        if self.matrix[line_start][spalte_j] == 0:
             for line_i in range(line_start, self.lines):
                 pivot_line_start = self.matrix[line_start][spalte_j]
                 pivot_line_i = self.matrix[line_i][spalte_j]
